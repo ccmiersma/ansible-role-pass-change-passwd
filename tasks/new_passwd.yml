@@ -1,0 +1,5 @@
+---
+
+- name: generate passwords
+  shell: "pass generate {{pass_flags}} {{pass_inventory_root}}/hosts/{{inventory_hostname}}/users/{{ pass_user }} {{ password_length }}"
+  delegate_to: localhost

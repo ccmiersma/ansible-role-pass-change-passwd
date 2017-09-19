@@ -1,0 +1,12 @@
+- name: get passwords from pass
+  shell: "pass show {{pass_inventory_root}}/hosts/{{inventory_hostname}}/users/{{ pass_user }} 2>/dev/null"
+  delegate_to: localhost
+  register: pass_output
+  
+- name: set password value
+  set_fact:
+    password: "{{ pass_output.stdout }}"
+  
+- name: set password
+  become: true
+  shell: echo {{ password }} | passwd --stdin {{ pass_user }}

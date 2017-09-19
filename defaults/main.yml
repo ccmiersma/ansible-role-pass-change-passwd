@@ -1,0 +1,13 @@
+---
+# defaults file for pass-change-passwd
+
+# The user whose password is to be changed:
+pass_user: root 
+# The password itself. A fallback value is provided in case pass doesn't override it properly, but it should fail before this is used.
+password: Default123 
+# The default length for generated passwords
+password_length: 15
+#The point within the pass tree that serves as a root for inventory passwords. By default all passwords will be in inventory/hosts/hostname.example.com/users/username
+pass_inventory_root: inventory 
+#Flags to give to pass. By defauly, we generate passwords without symbols.
+pass_flags: -n

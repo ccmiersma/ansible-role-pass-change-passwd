@@ -1,0 +1,19 @@
+---
+# tasks file for pass-change-passwd
+
+- name: update pass
+  shell: pass git pull
+  delegate_to: localhost
+  run_once: true
+  tags:
+    - prep
+    
+- include: new_passwd.yml
+  no_log: true
+  tags:
+    - new_passwd
+    
+- include: set_passwd.yml
+  no_log: true
+  tags: 
+    - set_passwd
