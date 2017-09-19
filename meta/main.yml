@@ -43,7 +43,7 @@ galaxy_info:
   #   - 1.0
   #   - 7
   #   - 99.99
-  platforms
+  platforms:
   - name: EL
     versions: 7
   - name: Fedora
